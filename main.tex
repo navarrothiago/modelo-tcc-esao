@@ -1,0 +1,267 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[margin=2cm, top=3cm, bottom=3cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[scaled]{helvet}
+\renewcommand*\familydefault{\sfdefault} 
+\usepackage[utf8]{inputenc}
+\usepackage[portuguese]{babel}
+\usepackage{setspace}
+\usepackage{lipsum} % para gerar texto fictício
+
+\usepackage{setspace}
+\usepackage{titlesec} % pacote para personalizar títulos de seções
+\usepackage{lipsum} % para gerar texto fictício
+
+\usepackage{tocloft}
+
+
+\titleformat*{\section}{\bfseries\large\MakeUppercase} % configura a formatação do título da seção
+
+\titleformat*{\subsection}{\large\MakeUppercase} % configura a formatação do subtítulo da seção
+
+\titleformat*{\subsubsection}{\bfseries\large\MakeUppercase} % configura a formatação do subtítulo da seção
+
+\titlespacing*{\section} {0pt}{2\baselineskip}{2\baselineskip} % configura o espaçamento do título da seção
+\titlespacing*{\subsection} {0pt}{2\baselineskip}{2\baselineskip} % configura o espaçamento do título da seção
+\titlespacing*{\subsubsection} {0pt}{2\baselineskip}{2\baselineskip} % configura o espaçamento do título da seção
+
+\renewcommand{\cftsecfont}{\bfseries} % seções em negrito
+\renewcommand{\cftsubsecfont}{} % subseções sem negrito
+\renewcommand{\cftsubsubsecfont}{\bfseries} % sub sub seções em negrito
+
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}} % linhas pontilhadas até a página
+\renewcommand{\cftsecaftersnum}{.} % ponto após o número da seção
+\renewcommand{\cftsubsecaftersnum}{.} % ponto após o número da subseção
+\setlength{\cftbeforesecskip}{1em} % espaço antes da seção
+\setlength{\cftbeforesubsecskip}{1em} % espaço antes da subseção
+\setlength{\cftbeforesubsubsecskip}{1em} % espaço antes da subseção
+\renewcommand{\cftsecafterpnum}{\vskip0pt} % sem espaço extra após o número da página da seção
+\renewcommand{\cftsubsecafterpnum}{\vskip0pt} % sem espaço extra após o número da página da subseção
+\renewcommand{\cftsubsubsecafterpnum}{\vskip0pt} % sem espaço extra após o número da página da subseção
+
+% Alinhando todos os níveis à esquerda
+\setlength{\cftsecindent}{0em} % Ajuste esse valor se necessário
+\setlength{\cftsubsecindent}{0em} % Ajuste esse valor se necessário
+\setlength{\cftsubsubsecindent}{0em} % Ajuste esse valor se necessário
+\setlength{\cftsecnumwidth}{3em} % Ajuste esse valor se necessário
+\setlength{\cftsubsecnumwidth}{3em} % Ajuste esse valor se necessário
+\setlength{\cftsubsubsecnumwidth}{3em} % Ajuste esse valor se necessário
+
+% Remove o título "Conteúdo"
+\renewcommand{\contentsname}{}
+\addto\captionsportuguese{
+  \renewcommand{\contentsname}{}
+}
+
+\begin{document}
+
+% Capa
+\begin{titlepage}
+    \centering
+    \onehalfspacing
+    \textbf{\Large ESCOLA DE APERFEIÇOAMENTO DE OFICIAIS} % Nome da instituição
+    
+    \vspace{2\baselineskip} % Dois espaços duplos
+
+    \textbf{Cap QEM THIAGO ARRUDA NAVARRO DO AMARAL} % Nome do autor
+
+    \vspace{7\baselineskip} % Sete espaços duplos
+
+    \textbf{TÍTULO DO TRABALHO} % Título do trabalho
+
+    \vspace{2\baselineskip} % Dois espaços duplos
+
+    % \textbf{SUBTÍTULO DO TRABALHO} % Subtítulo do trabalho (se houver)
+
+    \vspace{\baselineskip} % Um espaço duplo
+
+    % \textbf{Vol. 1} % Volume (se houver)
+
+    \vfill % Preenche o espaço vertical
+
+    \vspace{5cm} % Espaço de 5cm da margem inferior
+
+    \textbf{Campinas} % Cidade
+
+    \vspace{\baselineskip} % Um espaço duplo
+
+    \textbf{2023} % Ano de entrega
+\end{titlepage}
+
+\newgeometry{top=3cm,bottom=2cm,left=3cm,right=2cm} % Define novas margens
+
+% Folha de rosto
+\begin{titlepage}
+    \centering
+    \onehalfspacing
+    \textbf{\Large ESCOLA DE APERFEIÇOAMENTO DE OFICIAIS} % Nome da instituição
+    
+    \vspace{3\baselineskip} % Três espaços duplos
+
+    \textbf{Cap QEM THIAGO ARRUDA NAVARRO DO AMARAL} % Nome do autor
+
+    \vspace{4\baselineskip} % Quatro espaços duplos
+
+    \textbf{TÍTULO DO TRABALHO} % Título do trabalho
+
+    \vspace{2\baselineskip} % Dois espaços duplos
+
+    % \textbf{SUBTÍTULO DO TRABALHO} % Subtítulo do trabalho (se houver)
+
+    \vspace{\baselineskip} % Um espaço duplo
+
+    % \textbf{Vol. 1} % Volume (se houver)
+
+    \vspace{4\baselineskip} % Quatro espaços duplos
+
+    \begin{flushright}
+    \begin{minipage}{0.5\textwidth}
+        \singlespacing
+        Trabalho de Conclusão de Curso apresentado à Escola de  Aperfeiçoamento de Oficiais como requisito parcial para a obtenção do grau especialização em Ciências Militares.
+
+        \vspace{\baselineskip} % Um espaço simples
+
+        Orientador: Maj QEM Fulano de \textbf{Tal} % Nome do orientador
+    \end{minipage}
+    \end{flushright}
+
+    \vfill % Preenche o espaço vertical
+
+    \vspace{4cm} % Espaço de 4cm da margem inferior
+
+    \onehalfspacing
+    \textbf{Campinas} % Cidade
+
+    \vspace{\baselineskip} % Um espaço duplo
+
+    \textbf{2023} % Ano de entrega
+\end{titlepage}
+
+\newpage % Iniciar uma nova página
+
+\begin{titlepage}
+    \centering
+    \doublespacing
+
+    \vspace*{3cm} % Espaçamento de 3cm do topo da página
+
+    \textbf{THIAGO ARRUDA NAVARRO DO AMARAL} % Nome do autor
+
+    \vspace*{2\baselineskip} % Dois espaços duplos
+
+    \textbf{TÍTULO DO TRABALHO} % Título do trabalho
+    
+    \vspace*{\baselineskip} % Um espaço duplo
+
+    % \textbf{SUBTÍTULO DO TRABALHO} % Subtítulo do trabalho
+
+    \vspace*{\baselineskip} % Um espaço duplo
+
+    \begin{flushright}
+    \begin{minipage}{0.5\textwidth}
+    
+        \singlespacing
+        Trabalho de Conclusão de Curso apresentado à Escola de  Aperfeiçoamento de Oficiais como requisito parcial para a obtenção do grau especialização em Ciências Militares.
+    \end{minipage}
+    \end{flushright}
+    \doublespacing
+
+    \vspace*{2\baselineskip} % Dois espaços duplos
+
+    \begin{flushleft}
+        Aprovado em 1 de março de 2023 % Data de aprovação
+    \end{flushleft}
+
+    \vspace*{2\baselineskip} % Dois espaços duplos
+
+    % \textbf{Banca Examinadora} % Banca Examinadora
+    COMISSÃO DE AVALIAÇÃO
+
+    \begin{center}
+        \makebox[10cm]{\hrulefill}
+        \vspace{-0.5cm}
+        \singlespacing
+        Nome Completo e Posto \\
+        Titulação \\
+        Função na banca examinadora e instituição/OM de origem % Credenciais
+        
+        \vspace{4\baselineskip}
+        
+        \makebox[10cm]{\hrulefill}
+        \vspace{-0.5cm}
+        \singlespacing
+        Nome Completo e Posto \\
+        Titulação \\
+        Função na banca examinadora e instituição/OM de origem % Credenciais
+        \vspace{2\baselineskip}
+    \end{center}
+\end{titlepage}
+
+\begin{titlepage}
+    \centering
+    \singlespacing
+    \vspace*{3\baselineskip}
+
+    \textbf{\Large RESUMO}
+
+    \vspace{3\baselineskip}
+
+    \singlespacing
+    \leftskip1.25cm\rightskip1.25cm % ajusta a margem do parágrafo
+    \lipsum[1] % gera um parágrafo fictício para representar o resumo
+    \par
+
+    \vspace{2\baselineskip}
+
+    \textbf{Palavras-chave:} Palavra1. Palavra2. Palavra3. Palavra4.
+
+\end{titlepage}
+
+\begin{titlepage}
+    \centering
+    \singlespacing
+    \vspace*{3\baselineskip}
+
+    \textbf{\Large ABSTRACT}
+
+    \vspace{3\baselineskip}
+
+    \singlespacing
+    \leftskip1.25cm\rightskip1.25cm % ajusta a margem do parágrafo
+    \lipsum[1] % gera um parágrafo fictício para representar o resumo
+    \par
+
+    \vspace{2\baselineskip}
+
+    \textbf{Key words} Palavra1. Palavra2. Palavra3. Palavra4.
+
+\end{titlepage}
+
+\begin{center}
+    \vspace*{3cm}
+    \Large\textbf{\MakeUppercase{Sumário}}
+\end{center}
+\vspace*{3\baselineskip}
+
+\tableofcontents
+\thispagestyle{empty}
+\newpage
+
+\setlength{\parindent}{1.25cm} % ajusta o recuo do parágrafo
+\onehalfspacing % configura o espaçamento de 1,5 entre as linhas
+
+\section{Primeira Seção}
+
+\lipsum[1-2]
+
+\section{Segunda Seção}
+
+\lipsum[3-4]
+
+\subsection{Sub seção}
+\lipsum[5-6]
+
+\subsubsection{Sub subseção}
+\lipsum[5-6]
+
+\end{document}
