@@ -1,19 +1,31 @@
+% TODO: ATENÇÃO: FALTA IMPLEMENTAR OS ELEMENTOS OPCIONAIS.
+% Se usar os comandos de gerar esses elementos, não estará formatado conforme a MATAD 2017 (http://www.esao.eb.mil.br/images/Arquivos/spg/material/MATAD_2017.pdf).
+
 \documentclass[12pt,a4paper]{article}
 \usepackage[margin=2cm, top=3cm, bottom=3cm]{geometry}
 \usepackage[T1]{fontenc}
 \usepackage[scaled]{helvet}
-\renewcommand*\familydefault{\sfdefault} 
+\renewcommand*\familydefault{\sfdefault}
 \usepackage[utf8]{inputenc}
 \usepackage[portuguese]{babel}
 \usepackage{setspace}
 \usepackage{lipsum} % para gerar texto fictício
-
+\usepackage{graphicx}
 \usepackage{setspace}
 \usepackage{titlesec} % pacote para personalizar títulos de seções
 \usepackage{lipsum} % para gerar texto fictício
 
 \usepackage{tocloft}
 
+% Useful packages
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorlinks=false, allcolors=blue]{hyperref}
+
+
+\def\mytitle{MEU TÍTULO}
+\def\myname{Cap QEM MEU NOME COMPLETO}
+\def\myadvisor{Maj QEM Fulano de \textbf{Tal}}
 
 \titleformat*{\section}{\bfseries\large\MakeUppercase} % configura a formatação do título da seção
 
@@ -58,16 +70,21 @@
 % Capa
 \begin{titlepage}
     \centering
+    \begin{figure}
+        \centering
+        \includegraphics{imagens/ESAO.jpg}
+        \label{fig:enter-label}
+    \end{figure}
     \onehalfspacing
     \textbf{\Large ESCOLA DE APERFEIÇOAMENTO DE OFICIAIS} % Nome da instituição
-    
+
     \vspace{2\baselineskip} % Dois espaços duplos
 
-    \textbf{Cap QEM THIAGO ARRUDA NAVARRO DO AMARAL} % Nome do autor
+    \textbf{\myname} % Nome do autor
 
     \vspace{7\baselineskip} % Sete espaços duplos
 
-    \textbf{TÍTULO DO TRABALHO} % Título do trabalho
+    \textbf{\mytitle} % Título do trabalho
 
     \vspace{2\baselineskip} % Dois espaços duplos
 
@@ -95,14 +112,14 @@
     \centering
     \onehalfspacing
     \textbf{\Large ESCOLA DE APERFEIÇOAMENTO DE OFICIAIS} % Nome da instituição
-    
+
     \vspace{3\baselineskip} % Três espaços duplos
 
-    \textbf{Cap QEM THIAGO ARRUDA NAVARRO DO AMARAL} % Nome do autor
+    \textbf{\myname} % Nome do autor
 
     \vspace{4\baselineskip} % Quatro espaços duplos
 
-    \textbf{TÍTULO DO TRABALHO} % Título do trabalho
+    \textbf{\mytitle} % Título do trabalho
 
     \vspace{2\baselineskip} % Dois espaços duplos
 
@@ -121,7 +138,7 @@
 
         \vspace{\baselineskip} % Um espaço simples
 
-        Orientador: Maj QEM Fulano de \textbf{Tal} % Nome do orientador
+         Orientador: \myadvisor % Nome do orientador
     \end{minipage}
     \end{flushright}
 
@@ -145,12 +162,12 @@
 
     \vspace*{3cm} % Espaçamento de 3cm do topo da página
 
-    \textbf{THIAGO ARRUDA NAVARRO DO AMARAL} % Nome do autor
+    \textbf{\myname} % Nome do autor
 
     \vspace*{2\baselineskip} % Dois espaços duplos
 
-    \textbf{TÍTULO DO TRABALHO} % Título do trabalho
-    
+    \textbf{\mytitle} % Título do trabalho
+
     \vspace*{\baselineskip} % Um espaço duplo
 
     % \textbf{SUBTÍTULO DO TRABALHO} % Subtítulo do trabalho
@@ -159,7 +176,7 @@
 
     \begin{flushright}
     \begin{minipage}{0.5\textwidth}
-    
+
         \singlespacing
         Trabalho de Conclusão de Curso apresentado à Escola de  Aperfeiçoamento de Oficiais como requisito parcial para a obtenção do grau especialização em Ciências Militares.
     \end{minipage}
@@ -184,9 +201,9 @@
         Nome Completo e Posto \\
         Titulação \\
         Função na banca examinadora e instituição/OM de origem % Credenciais
-        
+
         \vspace{4\baselineskip}
-        
+
         \makebox[10cm]{\hrulefill}
         \vspace{-0.5cm}
         \singlespacing
