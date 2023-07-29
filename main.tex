@@ -1,21 +1,23 @@
-% TODO: ATENÇÃO: FALTA IMPLEMENTAR OS ELEMENTOS OPCIONAIS.
-% Se usar os comandos de gerar esses elementos, não estará formatado conforme a MATAD 2017 (http://www.esao.eb.mil.br/images/Arquivos/spg/material/MATAD_2017.pdf).
+% TODO: ATENÇÃO: FALTA IMPLEMENTAR OS ELEMENTOS OPCIONAIS. 
+% Se usar os comandos de gerar esses elementos, não estará formatado conforme a MATAD 2017 (http://www.esao.eb.mil.br/images/Arquivos/spg/material/MATAD_2017.pdf). 
 
 \documentclass[12pt,a4paper]{article}
 \usepackage[margin=2cm, top=3cm, bottom=3cm]{geometry}
 \usepackage[T1]{fontenc}
 \usepackage[scaled]{helvet}
-\renewcommand*\familydefault{\sfdefault}
+\renewcommand*\familydefault{\sfdefault} 
 \usepackage[utf8]{inputenc}
 \usepackage[portuguese]{babel}
 \usepackage{setspace}
 \usepackage{lipsum} % para gerar texto fictício
-\usepackage{graphicx}
+\usepackage{graphicx} 
 \usepackage{setspace}
 \usepackage{titlesec} % pacote para personalizar títulos de seções
 \usepackage{lipsum} % para gerar texto fictício
-
-\usepackage{tocloft}
+\usepackage{verbatim} %pacote para comentar várias linhas
+\usepackage{tocloft} %personalizar a formatação e o layout das listas de conteúdo, figuras e tabelas,
+\usepackage[acronym,nonumberlist,nogroupskip]{glossaries} %personalizar a lista de siglas
+\makenoidxglossaries
 
 % Useful packages
 \usepackage{amsmath}
@@ -23,7 +25,7 @@
 \usepackage[colorlinks=false, allcolors=blue]{hyperref}
 
 
-\def\mytitle{MEU TÍTULO}
+\def\mytitle{MEU TITULO}
 \def\myname{Cap QEM MEU NOME COMPLETO}
 \def\myadvisor{Maj QEM Fulano de \textbf{Tal}}
 
@@ -65,19 +67,39 @@
   \renewcommand{\contentsname}{}
 }
 
+\newglossarystyle{custom}{%
+    \renewenvironment{theglossary}%
+    {\begin{longtable}{p{2,5cm}l{\glsdescwidth}}}
+    {\end{longtable}}
+    \renewcommand*{\glossaryheader}{}
+    \renewcommand*{\glsgroupheading}[1]{}
+    \renewcommand*{\glossaryentryfield}[5]{
+        \glstarget{##1}{\textnormal{##2}} & \emph{##3} \tabularnewline
+    }
+}
+
+%Lista de Abreviaturas
+%seguir o modelo de abreviatura 
+%\newacronym{atalho}{Sigla}{descrição} 
+    \newacronym{eb}{EB}{Exército Brasileiro}
+    
+
 \begin{document}
 
 % Capa
+
 \begin{titlepage}
     \centering
+\begin{comment}
     \begin{figure}
         \centering
         \includegraphics{imagens/ESAO.jpg}
         \label{fig:enter-label}
-    \end{figure}
+\end{figure}
+\end{comment}    
     \onehalfspacing
     \textbf{\Large ESCOLA DE APERFEIÇOAMENTO DE OFICIAIS} % Nome da instituição
-
+    
     \vspace{2\baselineskip} % Dois espaços duplos
 
     \textbf{\myname} % Nome do autor
@@ -112,7 +134,7 @@
     \centering
     \onehalfspacing
     \textbf{\Large ESCOLA DE APERFEIÇOAMENTO DE OFICIAIS} % Nome da instituição
-
+    
     \vspace{3\baselineskip} % Três espaços duplos
 
     \textbf{\myname} % Nome do autor
@@ -154,66 +176,79 @@
     \textbf{2023} % Ano de entrega
 \end{titlepage}
 
-\newpage % Iniciar uma nova página
+%FOLHA DE ASSINATURA
 
 \begin{titlepage}
     \centering
-    \doublespacing
+    %\doublespacing
 
-    \vspace*{3cm} % Espaçamento de 3cm do topo da página
+   \vspace*{3cm} % Espaçamento de 3cm do topo da página
 
     \textbf{\myname} % Nome do autor
 
     \vspace*{2\baselineskip} % Dois espaços duplos
 
     \textbf{\mytitle} % Título do trabalho
-
-    \vspace*{\baselineskip} % Um espaço duplo
+    
+    %\vspace*{\baselineskip} % Um espaço duplo
 
     % \textbf{SUBTÍTULO DO TRABALHO} % Subtítulo do trabalho
 
-    \vspace*{\baselineskip} % Um espaço duplo
+    \vspace*{2\baselineskip} % Um espaço duplo
 
     \begin{flushright}
     \begin{minipage}{0.5\textwidth}
-
         \singlespacing
-        Trabalho de Conclusão de Curso apresentado à Escola de  Aperfeiçoamento de Oficiais como requisito parcial para a obtenção do grau especialização em Ciências Militares.
+        Projeto de Pesquisa apresentado à Escola de Aperfeiçoamento de Oficiais, como requisito parcial para a conclusão da Especialização em Ciências Militares com ênfase em Engenharia Militar. 
     \end{minipage}
     \end{flushright}
     \doublespacing
 
-    \vspace*{2\baselineskip} % Dois espaços duplos
+    \vspace*{2\baselineskip} % um espaços duplos
 
     \begin{flushleft}
-        Aprovado em 1 de março de 2023 % Data de aprovação
+        Aprovado em \makebox[1cm]{\hrulefill} /  \makebox[1cm]{\hrulefill} /  2023. % Data de aprovação
     \end{flushleft}
 
-    \vspace*{2\baselineskip} % Dois espaços duplos
+    %\vspace*{\baselineskip} % um espaço simples
 
-    % \textbf{Banca Examinadora} % Banca Examinadora
-    COMISSÃO DE AVALIAÇÃO
+    \textbf{COMISSÃO DE AVALIAÇÃO}
+    \vspace*{\baselineskip} % um espaço simples
 
     \begin{center}
         \makebox[10cm]{\hrulefill}
         \vspace{-0.5cm}
         \singlespacing
-        Nome Completo e Posto \\
-        Titulação \\
-        Função na banca examinadora e instituição/OM de origem % Credenciais
-
+        \textbf{JAKLER} NICHELE NUNES – Maj \\
+        Instituto Militar de Engenharia \\
+        Coordenador do CAM % Credenciais
+        
         \vspace{4\baselineskip}
-
+        
         \makebox[10cm]{\hrulefill}
         \vspace{-0.5cm}
         \singlespacing
-        Nome Completo e Posto \\
-        Titulação \\
-        Função na banca examinadora e instituição/OM de origem % Credenciais
+        \textbf{ARLY} GAUTAMA RODRIGUES E SILVA – Cel \\
+        Instituto Militar de Engenharia \\
+        Professor do CAM % Credenciais
         \vspace{2\baselineskip}
     \end{center}
 \end{titlepage}
 
+%AGRADECIMENTOS
+\begin{titlepage}
+    \begin{center}
+        \textbf{AGRADECIMENTOS}
+    \end{center}
+    \vspace{3\baselineskip}
+    \setlength{\parindent}{1.25cm} % ajusta o recuo do parágrafo
+    \onehalfspacing % configura o espaçamento de 1,5 entre as linhas
+    Aqui entram os agradecimentos do seu trabalho
+    
+\end{titlepage}
+
+
+%RESUMO
 \begin{titlepage}
     \centering
     \singlespacing
@@ -253,6 +288,29 @@
     \textbf{Key words} Palavra1. Palavra2. Palavra3. Palavra4.
 
 \end{titlepage}
+
+%CONFIGURAÇÃO DA LISTA DE FIGURAS
+\renewcommand{\cftfigpresnum}{Figura } % Prefixo antes do número da figura
+\renewcommand{\cftfigaftersnum}{ --} % Sufixo após o número da figura
+\setlength{\cftfignumwidth}{5em} % Espaçamento para números das figuras (ajuste conforme necessário)
+
+\begin{center}
+     \Large\textbf{\MakeUppercase{Lista de Figuras}}
+\end{center}
+\vspace*{3\baselineskip}
+\renewcommand{\listfigurename}{}
+\listoffigures
+\thispagestyle{empty}
+\newpage
+
+\begin{center}
+     \Large\textbf{\MakeUppercase{Lista de Abreviaturas}}
+\end{center}
+\vspace*{3\baselineskip}
+%\printnoidxglossary[type=acronym, title={}, toctitle={Lista de Abreviaturas}]
+\printnoidxglossary[style=custom, type=acronym, title={}, toctitle={Lista de Abreviaturas}]
+\thispagestyle{empty}
+\newpage
 
 \begin{center}
     \vspace*{3cm}
